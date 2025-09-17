@@ -1,14 +1,10 @@
+version: '3.8'
+
 services:
   flet_frontend:
     build: .
     container_name: flet_frontend
     ports:
-      - "8501:8501"  # Puerto por defecto de Flet
+      - "1001:8501"  # Frontend en puerto 1001 como requerido
     env_file:
       - .env
-    networks:
-      - red_postgres  # Misma red que el backend
-
-networks:
-  red_postgres:
-    external: true
